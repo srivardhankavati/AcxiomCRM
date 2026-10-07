@@ -1,0 +1,50 @@
+:root {
+    --crm-ink: #172033;
+    --crm-primary: #315efb;
+    --crm-soft: #eef3ff;
+    --crm-bg: #f6f8fc;
+    --crm-border: #e4e8f0;
+}
+
+body {
+    background: var(--crm-bg);
+    color: var(--crm-ink);
+    font-family: Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+.app-header {
+    background: linear-gradient(110deg, #172033, #26395d);
+    box-shadow: 0 4px 18px rgba(23, 32, 51, .16);
+}
+
+.brand-mark { letter-spacing: .3px; }
+.navbar .nav-link { color: rgba(255,255,255,.78); }
+.navbar .nav-link:hover { color: #fff; }
+.user-chip { color: #fff; font-size: .88rem; opacity: .9; }
+
+.card {
+    border: 1px solid var(--crm-border);
+    border-radius: 14px;
+    box-shadow: 0 5px 18px rgba(31, 44, 72, .05);
+}
+
+.kpi { font-size: 1.75rem; font-weight: 750; }
+.kpi-label { color: #68738a; font-size: .84rem; text-transform: uppercase; letter-spacing: .04em; }
+
+.table { background: #fff; vertical-align: middle; }
+.table thead th { color: #667085; font-size: .8rem; text-transform: uppercase; letter-spacing: .03em; }
+
+.form-control, .form-select { border-color: #d9deea; border-radius: 9px; }
+.form-control:focus, .form-select:focus { border-color: var(--crm-primary); box-shadow: 0 0 0 .2rem rgba(49,94,251,.12); }
+
+.btn-primary { background: var(--crm-primary); border-color: var(--crm-primary); }
+.badge-open { background: #315efb; }
+.badge-won { background: #159570; }
+.badge-lost { background: #d74b55; }
+
+.required:after { content: " *"; color: #d74b55; }
+.validation-summary-errors, .field-validation-error { color: #c53642; }
+.login-card { max-width: 460px; margin: 64px auto; }
+
+.page-title { font-weight: 750; }
+.muted { color: #69758b; }

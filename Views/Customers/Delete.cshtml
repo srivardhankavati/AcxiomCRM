@@ -1,0 +1,3 @@
+@model Customer
+<div class="alert alert-warning">
+<h3>Delete customer?</h3><p>@Model.CustomerName (@Model.CustomerCode)</p><form method="post"><button class="btn btn-danger">Delete</button> <a asp-action="Index" class="btn btn-secondary">Cancel</a></form></div>

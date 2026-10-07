@@ -1,0 +1,2 @@
+@model IEnumerable<ApplicationUser>
+<div class="d-flex justify-content-between mb-3"><h2>User Management</h2><a class="btn btn-primary" asp-controller="Account" asp-action="Register">+ User</a></div><table class="table table-striped"><thead><tr><th>Name</th><th>Email</th><th>Status</th><th>Actions</th></tr></thead><tbody>@foreach(var u in Model){<tr><td>@u.FullName</td><td>@u.Email</td><td>@(u.LockoutEnd.HasValue && u.LockoutEnd>DateTimeOffset.UtcNow ? "Inactive/Locked" : "Active")</td><td><a asp-action="Edit" asp-route-id="@u.Id">Edit</a></td></tr>}</tbody></table>

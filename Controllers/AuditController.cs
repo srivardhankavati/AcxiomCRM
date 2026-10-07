@@ -1,0 +1,3 @@
+using AcxiomCrm.Data;using Microsoft.AspNetCore.Authorization;using Microsoft.AspNetCore.Mvc;using Microsoft.EntityFrameworkCore;
+namespace AcxiomCrm.Controllers;
+[Authorize(Roles="Admin,Manager")]public class AuditController:Controller{private readonly ApplicationDbContext _db;public AuditController(ApplicationDbContext db)=>_db=db;public async Task<IActionResult>Index(string? action,string? module){var q=_db.AuditLogs.AsNoTracking().AsQueryable();if(!string.IsNullOrWhiteSpace(action))q=q.Where(x=>x.Action.Contains(action));if(!string.IsNullOrWhiteSpace(module))q=q.Where(x=>x.EntityName.Contains(module));ViewData["Action"] = action;ViewData["Module"] = module;return View(await q.OrderByDescending(x=>x.CreatedDate).Take(500).ToListAsync());}}
